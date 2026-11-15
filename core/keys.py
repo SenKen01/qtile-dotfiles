@@ -6,6 +6,9 @@ mod = "mod4"  # Клавиша Super (Win)
 terminal = guess_terminal()
 
 keys = [
+    # Запуск Rofi (меню приложений)
+    Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Launch Rofi"),
+
     # Переключение фокуса между окнами
     Key([mod], "h", lazy.layout.left(), desc="Фокус влево"),
     Key([mod], "l", lazy.layout.right(), desc="Фокус вправо"),
@@ -40,8 +43,8 @@ keys = [
 ]
 
 # Управление плавающими окнами мышью (Super + ЛКМ / ПКМ)
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front()),
-]
+# mouse = [
+#     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
+#     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
+#     Click([mod], "Button2", lazy.window.bring_to_front()),
+# ]
