@@ -8,9 +8,13 @@ terminal = guess_terminal()
 keys = [
     # Запуск Rofi (меню приложений)
     Key([mod], "d", lazy.spawn("rofi -show drun"), desc="Launch Rofi"),
+    
     #обновление обоевS
     Key([mod, "shift"], "w", lazy.spawn("/home/master/.config/qtile/scripts/collage_maker.py"), desc="Обновить Pinterest-коллаж"),
-    
+
+    #Переключение расскладки клавиатуры на Alt+Space
+    #Key([mod], "space", lazy.widget["KeyboardLayout"].next_keyboard(), desc="Сменить расскладку(win+Space)"),
+    Key(["mod1"], "space", lazy.widget["keyboardlayout"].next_keyboard(), desc="Сменить раскладку"),    
     # Переключение фокуса между окнами
     Key([mod], "h", lazy.layout.left(), desc="Фокус влево"),
     Key([mod], "l", lazy.layout.right(), desc="Фокус вправо"),

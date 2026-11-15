@@ -6,3 +6,8 @@ from libqtile import hook
 def autostart():
     script = os.path.expanduser("~/.config/qtile/scripts/autostart.sh")
     subprocess.Popen([script])
+
+@hook.subscribe.startup
+def setup_keyboard():
+    subprocess.Popen(["killall", "-q", "ibus-daemon"])
+    subprocess.Popen(["setxkbmap", "-layout", "us,ru", "-option", ""])

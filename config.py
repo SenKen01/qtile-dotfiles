@@ -1,4 +1,4 @@
-from core.keys import keys, mouse
+from core.keys import keys
 from core.groups import groups
 from core.layouts import layouts, floating_layout
 from core.screens import screens, widget_defaults, extension_defaults

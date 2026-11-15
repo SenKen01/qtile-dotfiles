@@ -24,6 +24,12 @@ screens = [
                 widget.Prompt(prompt="Run: ", foreground=colors["secondary"]),
                 widget.WindowName(max_chars=50),
                 widget.Systray(),
+                widget.KeyboardLayout(
+                    configured_keyboards=["us", "ru"],
+                    display_map={"us": "EN", "ru": "RU"},
+                    foreground=colors["accent"],
+                ),
+                widget.Sep(linewidth=1, padding=10, foreground=colors["inactive"]),
                 widget.Sep(linewidth=1, padding=10, foreground=colors["inactive"]),
                 widget.Clock(format="%d.%m.%Y | %H:%M", foreground=colors["secondary"]),
                 widget.QuickExit(default_text=" [Выход] ", countdown_format="[{}]", foreground=colors["urgent"]),
